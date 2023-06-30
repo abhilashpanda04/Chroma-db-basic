@@ -1,27 +1,27 @@
 ##Chromadb Collection and Query Example
 This code snippet demonstrates how to use the chromadb library to create a collection, add documents with metadata to the collection, and perform a query on the collection.
 
-#Installation
+# Installation
 Before running the code, make sure you have the chromadb library installed. You can install it using pip:
 
 ```
 pip install chromadb
 ```
-Usage
+# Usage
 Import the necessary modules and classes:
 
 ```
 from chromadb import Client
 from chromadb.config import Settings
 ```
-#Create a Client object:
+# Create a Client object:
 ```
 client = Client(Settings(
     chroma_db_impl="duckdb+parquet",
     persist_directory="/path/to/chroma-db" # Optional, defaults to .chromadb/ in the current directory
 ))
 ```
-#Define the documents and metadata:
+# Define the documents and metadata:
 
 ```
 string_1 = "Video games are an interesting class of software..."
@@ -31,7 +31,7 @@ metadata_1 = {'source:1': 'video_games'}
 metadata_2 = {'source2': 'ipad_issues'}
 ```
 
-#Create a collection and add the documents with metadata:
+# Create a collection and add the documents with metadata:
 
 ```
 collection = client.create_collection("docs")
@@ -41,7 +41,7 @@ collection.add(
     ids=["id1", "id2"]
 )
 ```
-#Perform a query on the collection:
+# Perform a query on the collection:
 
 ```
 results = collection.query(
@@ -50,7 +50,7 @@ results = collection.query(
 )
 ```
 
-#Print the result:
+# Print the result:
 
 ```
 print(results['documents'][0])
