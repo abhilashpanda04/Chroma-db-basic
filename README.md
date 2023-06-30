@@ -10,8 +10,10 @@ pip install chromadb
 Usage
 Import the necessary modules and classes:
 
+```
 from chromadb import Client
 from chromadb.config import Settings
+```
 #Create a Client object:
 ```
 client = Client(Settings(
